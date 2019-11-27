@@ -1,0 +1,16 @@
+<div class="categoria" *ngFor="let categoria of categorias">
+    <a href="categoria.php?idCategoria=<? echo $idCategoria;?>&Usr=<?echo $Usr;?>">
+        <div id="imgCategoria{{categoria.idCategoria}}" style="width:100%  !important; min-height:400px;  
+                    
+                    background-repeat: no-repeat; background-position: center; 
+                    background-size: cover; text-align:center; color:white !important;">
+            <input type="text" value="{{categoria.imgCategoria}}">
+            <h5 style=" font-size:15px;  letter-spacing:1px; font-weight:500;"> PRESENTAMOS</h5>
+            <h3 style="margin-top:15px; font-size:25px; font-weight:800; letter-spacing:1px;text-transform: capitalize;">{{categoria.nombreCategoria}}</h3>
+            <p style="font-size:18px; margin-top:-10px;">En los servicios de Albya {{categoria.imgCategoria}}</p>
+            <button style="background:white; color:#000000; padding:5px; border-radius:11px; font-weight:500 ;padding-left:15px;padding-right:15px;">Más información</button>
+        </div>
+    </a>
+    <div class="separador"></div>
+    <app-show-servicios></app-show-servicios>
+</div>
