@@ -2,27 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Global } from './global';
-import { Servicio } from '../models/servicios';
+import { SubCategoria } from '../models/subCategoria';
 import { __values } from 'tslib';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiciosService {
+export class SubcategoriaService {
   public url = Global.url;
 
   // tslint:disable-next-line: variable-name
   constructor(private _http: HttpClient) { }
-  getServicioById(id) {
+
+  getSubCategoriaById(id) {
     console.log(`${this.url}servicio/read.php/${id}`);
-    return this._http.get(`${this.url}servicio/read.php/${id}`);
+    return this._http.get(`${this.url}subCategoria/read.php?id=${id}`);
   }
-  getServicios() {
-    return this._http.get(`${this.url}servicio/read.php`);
+  getSubCategorias() {
+    return this._http.get(`${this.url}subCategoria/read.php`);
   }
-
 }
-
-
-
 

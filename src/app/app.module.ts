@@ -13,6 +13,11 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { MenuCategoriasComponent } from './components/menu-categorias/menu-categorias.component';
 import { ShowCategoriaComponent } from './components/show-categoria/show-categoria.component';
 import { ShowServiciosComponent } from './components/show-servicios/show-servicios.component';
+import { ShowSubcategoriaComponent } from './components/show-subcategoria/show-subcategoria.component';
+import { APP_ROUTING } from './app.routes';
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,9 +27,11 @@ import { ShowServiciosComponent } from './components/show-servicios/show-servici
     BusquedaComponent,
     MenuCategoriasComponent,
     ShowCategoriaComponent,
-    ShowServiciosComponent
+    ShowServiciosComponent,
+    ShowSubcategoriaComponent
   ],
   imports: [
+    APP_ROUTING,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

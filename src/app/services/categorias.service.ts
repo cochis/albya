@@ -15,8 +15,9 @@ export class CategoriasService {
   getCategorias() {
     return this._http.get(`${this.url}categoria/read.php`);
   }
-  getUsuarios() {
-    return this._http.get(`${this.url}usuario/read.php`);
+  getCategoriaById(id) {
+    console.log(`${this.url}categoria/read.php?id=${id}`);
+    return this._http.get(`${this.url}categoria/read.php?id=${id}`);
   }
 }
 

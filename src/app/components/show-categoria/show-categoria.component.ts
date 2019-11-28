@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ShowCategoriaComponent implements OnInit {
   public categoria: Categoria;
-  public categorias: Categoria[];
+  public categorias: any;
   public imgCategoria: any;
 
   constructor(// tslint:disable-next-line: variable-name
@@ -20,25 +20,33 @@ export class ShowCategoriaComponent implements OnInit {
               private _categoriasService: CategoriasService) { }
 
   ngOnInit() {
- 
+
     this._categoriasService.getCategorias().subscribe(
       res => {
         // tslint:disable-next-line:quotemark
         this.imgCategoria = "../../../assets/img/" ;
-        this.categorias = res.records;
-        console.log(this.categorias);
-        console.log(this.categorias.length);
-         // tslint:disable-next-line:prefer-for-of
-        //  for(let i =0; i<this.categorias.length; i++){
-        //   // console.log(this.categorias[i].imgCategoria);
-        //   this.insertaImagen(this.categorias[i].idCategoria,this.categorias[i].imgCategoria);
+        this.categorias = res;
+        // tslint:disable-next-line: prefer-for-of
+        // for (let i = 0; i < this.categorias.length; i++) {
+        //   console.log(this.categorias[i].imgCategoria);
+        //   this.insertaImagen(this.categorias[i].idCategoria, this.categorias[i].imgCategoria);
         //  }
-      },
 
-      err => {
-        console.log(err);
-      }
-    )
+
+        // this._categoriasService.getCategoriaById(3).subscribe(
+        //     res => {
+        //       this.categoria= 
+        //       console.log(res);
+        //     },
+        //     err => {
+        //       console.log(err);
+        //     }
+        //   );
+        },
+  
+        err => {
+          console.log(err);
+        });
   }
 
   insertaImagen(id , imagen) {
@@ -53,6 +61,8 @@ export class ShowCategoriaComponent implements OnInit {
     // document.getElementById(imgId).style.background-size = "cover";
 
   }
+  // verSubCategoria( idx:number ){
+  //   this.router.navigate( ['/heroe',idx] );
+  // }
 
 }
-  
